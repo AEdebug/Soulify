@@ -12,7 +12,7 @@ from datetime import datetime
 load_dotenv()
 
 # Initialize Flask and SQLAlchemy
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static', static_url_path='/static')
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///empathai.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
